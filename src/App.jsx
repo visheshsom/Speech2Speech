@@ -3,11 +3,11 @@ import VoiceOrb from './components/VoiceOrb.jsx'
 import { useHybridVoiceAgent } from './hooks/useHybridVoiceAgent.js'
 
 const STATE_CFG = {
-  idle:       { label: 'Tap to speak',    hint: 'हिंदी · English · தமிழ் · ગુજ. · বাংলা · తెలుగు · ਪੰਜਾਬੀ' },
-  listening:  { label: 'Listening…',      hint: 'Speak naturally — auto-detects when you stop' },
-  processing: { label: 'Thinking…',      hint: '' },
-  speaking:   { label: 'Speaking…',      hint: 'Tap to end conversation' },
-  error:      { label: 'Tap to retry',   hint: '' },
+  idle: { label: 'Tap to speak', hint: 'हिंदी · English · தமிழ் · ગુજ. · বাংলা · తెలుగు · ਪੰਜਾਬੀ' },
+  listening: { label: 'Listening…', hint: 'Speak naturally — auto-detects when you stop' },
+  processing: { label: 'Thinking…', hint: '' },
+  speaking: { label: 'Speaking…', hint: 'Tap to end conversation' },
+  error: { label: 'Tap to retry', hint: '' },
 }
 
 export default function App() {
@@ -16,15 +16,15 @@ export default function App() {
   const { state, analyser, sessionActive, startSession, stopSession, stopRecording } = useHybridVoiceAgent({
     backendUrl: '/api',
     autoListen: true,
-    onError:       (e) => e && setError(String(e)),
+    onError: (e) => e && setError(String(e)),
     onStateChange: (s) => { if (s !== 'error') setError('') },
   })
 
   const handleMic = useCallback(async () => {
     if (!sessionActive) {
       setError('')
-      try { 
-        await startSession() 
+      try {
+        await startSession()
       } catch { /* onError handles it */ }
     } else {
       // Stop the entire session — VAD handles auto-stop during recording
@@ -33,13 +33,13 @@ export default function App() {
   }, [sessionActive, startSession, stopSession])
 
   const cfg = STATE_CFG[state] ?? STATE_CFG.idle
-  const isListening  = state === 'listening'
-  const isSpeaking   = state === 'speaking'
+  const isListening = state === 'listening'
+  const isSpeaking = state === 'speaking'
   const isProcessing = state === 'processing'
 
-  const accentColor = isSpeaking  ? '#FF9933'
-                    : isListening ? '#00CCFF'
-                    : '#FF6A00'
+  const accentColor = isSpeaking ? '#FF9933'
+    : isListening ? '#00CCFF'
+      : '#FF6A00'
 
   return (
     <>
@@ -50,8 +50,8 @@ export default function App() {
         background: isSpeaking
           ? 'radial-gradient(circle, rgba(255,120,20,0.10) 0%, transparent 68%)'
           : isListening
-          ? 'radial-gradient(circle, rgba(0,180,255,0.08) 0%, transparent 68%)'
-          : 'radial-gradient(circle, rgba(255,80,10,0.06) 0%, transparent 68%)',
+            ? 'radial-gradient(circle, rgba(0,180,255,0.08) 0%, transparent 68%)'
+            : 'radial-gradient(circle, rgba(255,80,10,0.06) 0%, transparent 68%)',
       }} />
 
       <div style={S.root}>
@@ -97,13 +97,13 @@ export default function App() {
               background: isListening
                 ? 'linear-gradient(135deg, #00DDFF, #0066FF)'
                 : isSpeaking
-                ? 'linear-gradient(135deg, #FF9933, #FF3300)'
-                : 'linear-gradient(135deg, #FFBB55, #FF6A00)',
+                  ? 'linear-gradient(135deg, #FF9933, #FF3300)'
+                  : 'linear-gradient(135deg, #FFBB55, #FF6A00)',
               boxShadow: isListening
                 ? '0 10px 36px rgba(0,200,255,0.30), 0 0 0 3px rgba(0,180,255,0.15)'
                 : isSpeaking
-                ? '0 10px 36px rgba(255,100,0,0.40), 0 0 0 3px rgba(255,120,0,0.18)'
-                : '0 10px 36px rgba(255,130,40,0.22)',
+                  ? '0 10px 36px rgba(255,100,0,0.40), 0 0 0 3px rgba(255,120,0,0.18)'
+                  : '0 10px 36px rgba(255,130,40,0.22)',
               transform: isListening ? 'scale(1.06)' : 'scale(1)',
             }}
           >
@@ -116,7 +116,7 @@ export default function App() {
             <div style={S.speakerRow}>
               <SpeakerIcon color={accentColor} />
               <div style={S.waveGroup}>
-                {[0,1,2,3,4].map(i => (
+                {[0, 1, 2, 3, 4].map(i => (
                   <div key={i} style={{ ...S.waveBar, animationDelay: `${i * 0.12}s` }} />
                 ))}
               </div>
@@ -126,7 +126,7 @@ export default function App() {
 
         {/* ── Footer ─────────────────────────────────────── */}
         <footer style={S.footer}>
-          Powered by Sarvam AI · AI4Bharat · Meta Llama
+          Copyright: Vishesh Sompura
         </footer>
       </div>
 
@@ -154,7 +154,7 @@ function MicIcon() {
       <rect x="9" y="2" width="6" height="11" rx="3" />
       <path d="M5 10a7 7 0 0 0 14 0" />
       <line x1="12" y1="19" x2="12" y2="22" />
-      <line x1="8"  y1="22" x2="16" y2="22" />
+      <line x1="8" y1="22" x2="16" y2="22" />
     </svg>
   )
 }
