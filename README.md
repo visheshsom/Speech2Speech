@@ -1,4 +1,4 @@
-# VISHESH SOMPURA AI — Speech-to-Speech Voice Agent
+# VISHESH SOMPURA AI - Speech-to-Speech Voice Agent
 
 Hybrid Indian-language voice assistant powered by **Sarvam AI** APIs - real-time speech understanding (STT), intelligent conversation (LLM), and natural voice synthesis (TTS) for 13+ Indian languages.
 
