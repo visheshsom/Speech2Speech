@@ -1,15 +1,15 @@
 # VISHESH SOMPURA AI — Speech-to-Speech Voice Agent
 
-A real-time Indian-language voice assistant powered by **Sarvam AI & Parler - TTS** S2T & T&S Model. Speak in any of 13+ Indian languages — agent listens, thinks, and speaks back naturally.
+A real-time Indian-language voice assistant powered by **Sarvam AI & Parler - TTS** S2T & T&S Model. Speak in any of 13+ Indian languages - agent listens, thinks, and speaks back naturally.
 
 ![VS S2S Agent App - Listening Mode](screenshot.png)
 
 ## Features
 
-- **Voice Activity Detection** — auto-detects when you stop speaking
-- **Hands-free conversation** — tap once, the agent loops: listen → think → speak → listen
-- **13+ Indian languages** — Hindi, English, Tamil, Telugu, Bengali, Gujarati, Marathi & more
-- **Animated VoiceOrb** — real-time audio-reactive visualization
+- **Voice Activity Detection** - auto-detects when you stop speaking
+- **Hands-free conversation** - tap once, the agent loops: listen → think → speak → listen
+- **13+ Indian languages** - Hindi, English, Tamil, Telugu, Bengali, Gujarati, Marathi & more
+- **Animated VoiceOrb** - real-time audio-reactive visualization
 
 ## Quick Start
 
@@ -25,7 +25,7 @@ cp .env.example .env
 npm run dev
 ```
 
-Open **http://localhost:5173** — tap the mic and start speaking.
+Open **http://localhost:5173** - tap the mic and start speaking.
 
 ## How It Works
 
