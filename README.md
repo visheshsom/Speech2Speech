@@ -1,6 +1,6 @@
 # VISHESH SOMPURA AI — Speech-to-Speech Voice Agent
 
-A real-time Indian-language voice assistant powered by **Sarvam AI**. Speak in any of 13+ Indian languages — agent listens, thinks, and speaks back naturally.
+A real-time Indian-language voice assistant powered by **Sarvam AI & Parler - TTS** S2T & T&S Model. Speak in any of 13+ Indian languages — agent listens, thinks, and speaks back naturally.
 
 ![VS S2S Agent App - Listening Mode](screenshot.png)
 
